@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.UUID;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @Entity
 @Table(name = "TB_LANCAMENTO")
 public class LancamentoModel implements Serializable {
@@ -22,8 +25,28 @@ public class LancamentoModel implements Serializable {
     @JoinColumn(name = "categoria_id")
     private CategoriaModel categoria;
 
+    private double valor;
+
+    private String date;
+
+
+    public LancamentoModel() {
+        LocalDateTime currentDate = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String formattedDate = currentDate.format(formatter);
+        this.date = formattedDate;
+    }
+
     public UUID getCodigo() {
         return codigo;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
     public void setCodigo(UUID codigo) {
@@ -45,4 +68,10 @@ public class LancamentoModel implements Serializable {
     public void setCategoria(CategoriaModel categoria) {
         this.categoria = categoria;
     }
+
+    public String getCurrentDate() {
+        return this.date;
+    }
+
+
 }
