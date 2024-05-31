@@ -18,9 +18,9 @@ public class LancamentoModel implements Serializable {
     @JoinColumn(name = "usuario_id")
     private UsuarioModel usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private CategoriaModel categoria;
+    private String descricao;
+    private Periodo periodo;
+    private Tipo tipo;
 
     public UUID getCodigo() {
         return codigo;
@@ -38,11 +38,28 @@ public class LancamentoModel implements Serializable {
         this.usuario = usuario;
     }
 
-    public CategoriaModel getCategoria() {
-        return categoria;
+    public Tipo getTipo() {
+        return tipo;
     }
 
-    public void setCategoria(CategoriaModel categoria) {
-        this.categoria = categoria;
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
     }
+
+    public Periodo getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setNome(String nome) {
+        this.descricao = nome;
+    }
+
 }
