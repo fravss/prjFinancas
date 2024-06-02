@@ -1,4 +1,4 @@
-package com.example.prjFinancas.models;
+package com.financontrol.carteira.model;
 
 import jakarta.persistence.*;
 

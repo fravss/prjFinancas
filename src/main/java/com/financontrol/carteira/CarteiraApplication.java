@@ -1,13 +1,13 @@
-package com.example.prjFinancas;
+package com.financontrol.carteira;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrjFinancasApplication {
+public class CarteiraApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PrjFinancasApplication.class, args);
+		SpringApplication.run(CarteiraApplication.class, args);
 	}
 
 }

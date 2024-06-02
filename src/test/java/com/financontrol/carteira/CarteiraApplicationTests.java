@@ -1,10 +1,10 @@
-package com.example.prjFinancas;
+package com.financontrol.carteira;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PrjFinancasApplicationTests {
+class CarteiraApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,4 +1,4 @@
-package com.example.prjFinancas.models;
+package com.financontrol.carteira.model;
 
 public enum Tipo {
     RECEITA(1, "Receita"),

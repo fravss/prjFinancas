@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanControl</title>
     
     
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/vars.css">
-    <link rel="stylesheet" href="../styles/body.css">
-    <link rel="stylesheet" href="../styles/logincadastro.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/vars.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/body.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/logincadastro.css}">
 
 
 </head>
@@ -29,14 +29,14 @@
             <h2>carteira digital.</h2>    
             
 
-            <h3>Acesse a sua conta:</h2>
+            <h3>Acesse a sua conta:</h3>
             <form action="login" method="post">
 
                 <div class="input-container">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" required>
-                    <label for="senha">Senha:</label>
-                    <input type="password" name="senha" id="senha" required>
+                    <label for="emaill">Email:</label>
+                    <input type="email" name="email" id="emaill" required>
+                    <label for="senhal">Senha:</label>
+                    <input type="password" name="senha" id="senhal" required>
                 </div>
                 <button type="submit">ENTRAR</button>
 
@@ -46,22 +46,22 @@
             </div>
         </div>
 
-        <div class="cadastro" id="cadastro">
+        <div class="cadastro hidden" id="cadastro" >
             <h2>nova carteira digital.</h2>
             
           
-            <h3>Crie sua conta e já comece a usar agora mesmo!</h2>
+            <h3>Crie sua conta e já comece a usar agora mesmo!</h3>
             <form action="cadastro" method="post">
 
                 <div class="input-container">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" required>
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" required>
-                    <label for="senha">Senha:</label>
-                    <input type="password" name="senha" id="senha" required>
-                    <label for="confirmarSenha">Confirmar Senha:</label>
-                    <input type="password" name="confirmarSenha" id="confirmarSenha" required>
+                    <label for="nomec">Nome:</label>
+                    <input type="text" name="nome" id="nomec" required>
+                    <label for="emailc">Email:</label>
+                    <input type="email" name="email" id="emailc" required>
+                    <label for="senhac">Senha:</label>
+                    <input type="password" name="senha" id="senhac" required>
+                    <label for="confirmarSenhac">Confirmar Senha:</label>
+                    <input type="password" name="confirmarSenha" id="confirmarSenhac" required>
                 </div>
                 <button type="submit">CADASTRAR</button>
 
@@ -77,5 +77,5 @@
     
 </body>
 
-<script src="../script.js"></script>
+<script th:src="@{../script.js}"></script>
 </html>
