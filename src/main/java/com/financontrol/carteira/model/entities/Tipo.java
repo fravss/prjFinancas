@@ -1,5 +1,9 @@
-package com.financontrol.carteira.model;
+package com.financontrol.carteira.model.entities;
 
+
+import lombok.Getter;
+
+@Getter
 public enum Tipo {
     RECEITA(1, "Receita"),
     DESPESA(2, "Despesa");
@@ -12,11 +16,4 @@ public enum Tipo {
         this.nome = nome;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
 }

@@ -1,28 +1,20 @@
 package com.financontrol.carteira.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.financontrol.carteira.model.dtos.UsuarioDto;
+import com.financontrol.carteira.model.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+//RECEBER AS REQUISIÇÕES HTTP ATRIBUIDO À USUÁRIO
+@RestController
+@RequestMapping("/cadastrar") //Requisição para esse controlador
 public class UsuarioController {
 
-    @GetMapping
-    public String index() {
-        return "redirect:auth";
-    }
+    @Autowired
+    private UsuarioService usuarioService;
 
-    @GetMapping("auth")
-    public String auth() {
-        return "logincadastro";
-    }
-
-    @GetMapping("login")
-    public String login() {
-        return "redirect:/home";
-    }
-
-    @GetMapping("cadastrar")
-    public String cadastrar() {
-        return "redirect:/auth";
+    @PostMapping
+    private UsuarioDto salvar(@RequestBody UsuarioDto usuarioDto) {
+        return usuarioService.salvar(usuarioDto);
     }
 }
