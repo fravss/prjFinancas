@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanControl</title>
+    
+    
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/vars.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/body.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/logincadastro.css}">
+
+
+</head>
+<body>
+    
+    <div class="logo">
+        <img src="../img/logo.png" alt="Logo da FinanControl">
+    </div>
+
+    <div class="container">
+
+
+        <h1>Olá!</h1>
+        <h2>Seja bem vindo a sua</h2>
+
+        <div class="login" id="login">
+            <h2>carteira digital.</h2>    
+            
+
+            <h3>Acesse a sua conta:</h3>
+            <form action="/auth" method="POST">
+
+                <div class="input-container">
+                    <label for="emaill">Email:</label>
+                    <input type="email" name="email" id="emaill" required>
+                    <label for="senhal">Senha:</label>
+                    <input type="password" name="senha" id="senhal" required>
+                </div>
+                <button type="submit">ENTRAR</button>
+
+            </form>
+            <div class="link">
+                <p>Ainda não tem uma conta? <a href="javascript:showCadastro()">Crie por aqui!</a></p>
+            </div>
+        </div>
+
+        <div class="cadastro hidden" id="cadastro" >
+            <h2>nova carteira digital.</h2>
+            
+          
+            <h3>Crie sua conta e já comece a usar agora mesmo!</h3>
+            <form action="/cadastrar" method="POST" >
+
+                <div class="input-container">
+                    <label for="nomec">Nome:</label>
+                    <input type="text" name="nome" id="nomec" required>
+                    <label for="emailc">Email:</label>
+                    <input type="email" name="email" id="emailc" required>
+                    <label for="senhac">Senha:</label>
+                    <input type="password" name="senha" id="senhac" required>
+                    <label for="confirmarSenhac">Confirmar Senha:</label>
+                    <input type="password" name="confirmarSenha" id="confirmarSenhac" required>
+                </div>
+                <button type="submit">CADASTRAR</button>
+
+            </form>
+            <div class="link">
+                
+                <p>Já tem uma conta? <a href="javascript:showLogin()">Acesse aqui!</a></p>
+            </div>
+            
+        </div>
+
+    </div>
+    
+</body>
+
+<script th:src="@{../script.js}"></script>
+</html>

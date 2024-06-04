@@ -1,6 +1,10 @@
-package com.example.prjFinancas.models;
+package com.financontrol.carteira.model.entities;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
 public enum Periodo {
     UNICO(1, "Único"),
     SEMANAL(2, "Semanal"),
@@ -15,14 +19,6 @@ public enum Periodo {
     Periodo(int id, String nome) {
         this.id = id;
         this.nome = nome;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     @Override
